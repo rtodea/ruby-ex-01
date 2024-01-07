@@ -6,6 +6,7 @@ class PeopleController
   def normalize
     people = PercentParser.new(params[:percent_format]).people
     people += DollarParser.new(params[:dollar_format]).people
+    people += PipeParser.new(params[:pipe_format]).people
 
     people.sort! do |person_a, person_b|
       person_a.first_name <=> person_b.first_name
@@ -18,8 +19,8 @@ class PeopleController
 
     result
   end
-  
+
   private
-  
+
   attr_reader :params
 end
