@@ -5,24 +5,24 @@ RSpec.describe Person do
     described_class.new(
       first_name: 'John',
       last_name: 'Smith',
-      city: city,
-      birthdate: birthdate,
+      city:,
+      birthdate:,
     )
   end
 
   describe '#to_s' do
-    let(:city) { 'Pheonix' }
+    let(:city) { 'Phoenix' }
     let(:birthdate) { Date.new(1990, 12, 31) }
 
     it 'returns string with fields separated by commas' do
-      expect(subject.to_s).to eq('John, Pheonix, 12/31/1990')
+      expect(subject.to_s).to eq('John, Smith, Phoenix, 12/31/1990')
     end
 
     context 'when city is abbreviated' do
       let(:city) { 'NYC' }
 
       it 'expands abbreviation to full city name' do
-        expect(subject.to_s).to eq('John, New York City, 12/31/1990')
+        expect(subject.to_s).to eq('John, Smith, New York City, 12/31/1990')
       end
     end
 
@@ -30,7 +30,7 @@ RSpec.describe Person do
       let(:birthdate) { Date.new(1990, 1, 2) }
 
       it 'does not include leading zeroes on month and day' do
-        expect(subject.to_s).to eq('John, Pheonix, 1/2/1990')
+        expect(subject.to_s).to eq('John, Smith, Phoenix, 1/2/1990')
       end
     end
   end

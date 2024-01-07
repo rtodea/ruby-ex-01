@@ -1,4 +1,3 @@
-
 class Person
   BIRTHDATE_FORMAT = '%-m/%-d/%Y'
   CITY_ABBREVIATIONS = {
@@ -16,7 +15,7 @@ class Person
   end
 
   def to_s
-    first_name + ', ' + formatted_city + ', ' + formatted_birthdate
+    "#{@first_name}, #{@last_name}, #{formatted_city}, #{formatted_birthdate}"
   end
 
   private
@@ -26,9 +25,7 @@ class Person
   end
 
   def formatted_city
-    if CITY_ABBREVIATIONS.key?(city)
-      return CITY_ABBREVIATIONS[city]
-    end
+    return CITY_ABBREVIATIONS[city] if CITY_ABBREVIATIONS.key?(city)
 
     city
   end

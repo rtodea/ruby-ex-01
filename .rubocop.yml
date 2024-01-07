@@ -1,0 +1,13 @@
+Style/FrozenStringLiteralComment:
+  Enabled: false
+Metrics/BlockLength:
+  Max: 30
+Style/TrailingCommaInArguments:
+  Enabled: true
+  EnforcedStyleForMultiline: comma
+  EnforcedStyleForMultilineSplat: comma
+  EnforcedStyleForTrailingSemicolon: require_no_trailing_comma
+Style/TrailingCommaInHashLiteral:
+  Enabled: false
+Style/Documentation:
+  Enabled: false
